@@ -127,7 +127,6 @@ header {
 /* Skills */
 #skill {
     width: 100%;
-    /* background-image: url("images/background-feature.png"); */
     background-repeat: no-repeat;
     text-align: center;
     color: #554F49;
@@ -172,6 +171,7 @@ header {
 .icon {
     width: 40%;
     height: 100%;
+    font-size: 5em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -189,16 +189,22 @@ header {
     font-family: var(--sub-font);
     font-size: var(--mediumfont);
     color: var(--twocolor);
-    padding: 20px 0;
+    padding: 10px 0;
 }
 .desc span:first-child::after {
     content: "";
     position: absolute;
     bottom: 70px;
-    left: 5%;
-    right: 5%;
+    left: 10%;
+    right: 10%;
     height: 1px;
     background: #aaa;
+}
+.desc span:last-child {
+    font-family: var(--main-font);
+    font-size: var(--smallfont);
+    color: var(--onecolor);
+    padding: 10px 0;
 }
 /* Footer */
 footer {
@@ -251,9 +257,6 @@ footer {
         display: flex;
         justify-content: space-around;
         align-items: center;
-    }
-    #logo-img {
-        display: block;
     }
     #header-logo h1 {
         margin-top: 30px; 
