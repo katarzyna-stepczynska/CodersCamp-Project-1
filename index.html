@@ -11,13 +11,24 @@
         <title>SK - Stepczyńska Katarzyna</title>
     </head>
     <body>
-        <!--Navbar-->
-        <nav>
-
-        </nav>
-        <!--Main-->
         <header>
-
+            <div id="header-logo">
+                <h1><span><img id="logo-img" src="img/logo_SK.svg" alt="logo Stepczyńska Katarzyna"></span>Katarzyna Stepczyńska<span>.</span></h1>
+                <div class="nav-icon" onclick="toggleMenu(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+            </div>
+            <nav class="nav-bar">
+                <ul>
+                    <li><a class="nav-link" href="#home">Home</a></li>
+                    <li><a class="nav-link" href="#about">About me</a></li>
+                    <li><a class="nav-link" href="#skill">Skills</a></li>
+                    <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </header>
         <!--About Me-->
         <section>
@@ -50,5 +61,10 @@
                 </div>
             </div>
         </footer>
+        <script>
+            function toggleMenu(e) {
+                e.classList.toggle("open");
+            }
+        </script>
     </body>
 </html>
