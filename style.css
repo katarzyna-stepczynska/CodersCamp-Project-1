@@ -8,6 +8,7 @@
     --whitecolor: #fff;
     --onecolor: #1b1464;
     --twocolor: #ff9045;
+    --threecolor: #554F49;
     --main-font: 'Old Standard TT',serif;
     --sub-font: 'Montserrat', sans-serif;
     --bigfont: 2em;
@@ -82,7 +83,7 @@ header {
     padding: 60px 0;
 }
 .home-box {
-    border: 1px solid white;
+    border: 1px solid var(--whitecolor);
     margin: 0 60px;
 }
 .home-box h1 {
@@ -93,7 +94,7 @@ header {
     padding: 20px;
 }
 .home-box h1:last-child {
-    border-top: 1px solid white;
+    border-top: 1px solid var(--whitecolor);
     font-family: var(--sub-font);
     font-size: var(--mediumfont);
     color: var(--whitecolor);
@@ -125,20 +126,18 @@ header {
     transition: .3s ease-in-out;
 }
 /* Skills */
-#skill {
+#skill, #portfolio {
     width: 100%;
-    background-repeat: no-repeat;
     text-align: center;
-    color: #554F49;
-    padding: 20px 0;
+    color: var(--threecolor);
 }
-#skill h1 {
+#skill h1, #portfolio h1 {
     font-family: var(--main-font);
     font-size: var(--bigfont);
     color: var(--onecolor);
     text-transform: uppercase;
 }
-#skill h1:nth-child(2) {
+#skill h1:nth-child(2), #portfolio h1:nth-child(2) {
     font-family: var(--sub-font);
     font-size: var(--mediumfont);
     color: var(--twocolor);
@@ -185,7 +184,7 @@ header {
     align-items: center;
     position: relative;
 }
-.desc span:first-child {
+.desc span:first-child, #portfolio .portfolio-content h1 {
     font-family: var(--sub-font);
     font-size: var(--mediumfont);
     color: var(--twocolor);
@@ -200,11 +199,96 @@ header {
     height: 1px;
     background: #aaa;
 }
-.desc span:last-child {
+.desc span:last-child, #portfolio .portfolio-content h1 span {
     font-family: var(--main-font);
     font-size: var(--smallfont);
     color: var(--onecolor);
     padding: 10px 0;
+    margin: 0 5px;
+}
+/* Portfolio */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 60px;
+}
+.portfolio-item {
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+    flex: 1 1 100%;
+    padding: 40px 60px;
+    margin: 20px 0;
+    justify-content: center;
+    align-items: center;
+}
+.portfolio-content {
+    flex: 1 1 70%;
+    padding-right: 35px;
+    color: var(--threecolor)
+}
+.portfolio-button {
+    padding: 0 20px;
+    margin-top: 40px;
+    height: 60px;
+    font-family: var(--sub-font);
+    font-size: var(--mediumfont);
+    text-transform: uppercase;
+    border: 2px #f1f1f1 solid;
+    background: transparent;
+    cursor: pointer;
+}
+.portfolio-button:hover {
+    border: 2px var(--twocolor) solid;
+    transition: .3s ease-in-out;
+    background: var(--twocolor);
+    color: var(--whitecolor);
+}
+.portfolio-button a {
+    text-decoration: none;
+    color: var(--threecolor);
+}
+.portfolio-button a:hover {
+    color: var(--whitecolor);
+}
+.portfolio-button a span{
+    margin-right: 5px;
+}
+.portfolio-thumbnail {
+    flex: 1 1 30%;
+    position: relative;
+    overflow: hidden;
+}
+.thumbnail {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 700;
+    display: flex;
+    position: absolute;
+    transition: .2s ease;
+    background-color: var(--onecolor);
+}
+.thumbnail-icon {
+    top: 50%;
+    left: 50%;
+    display: flex;
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.thumbnail-icon-box {
+    width: 40px;
+    height: 46px;
+    margin: 0 10px;
+    line-height: 46px;
+    text-align: center;
+    color: var(--threecolor);
+    background-color: var(--twocolor);
+    
+}
+.img-fluid {
+    height: auto;
+    max-width: 100%;
+    display: initial;
 }
 /* Footer */
 footer {
