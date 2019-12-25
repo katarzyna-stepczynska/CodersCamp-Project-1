@@ -11,17 +11,19 @@
         <title>SK - Stepczyńska Katarzyna</title>
     </head>
     <body>
-        <header>
-            <div id="header-logo">
-                <h1><span><img id="logo-img" src="img/logo_SK.svg" alt="logo Stepczyńska Katarzyna"></span>Katarzyna Stepczyńska<span>.</span></h1>
-                <div class="nav-icon" onclick="toggleMenu(this)">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
-                </div>
-            </div>
+        <header class="header">
             <nav class="nav-bar">
-                <ul>
+                <div class="header-logo">
+                    <a href="#">
+                        <!-- <img src="img/logo_SK.svg" alt="logo Stepczyńska Katarzyna"> -->
+                        Katarzyna Stepczyńska<span>.</span></a>
+                    <div class="nav-icon" id="menu-mobile">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+                </div>
+                <ul id="menu" class="menu">
                     <li><a class="nav-link" href="#home">Home</a></li>
                     <li><a class="nav-link" href="#about">About me</a></li>
                     <li><a class="nav-link" href="#skill">Skills</a></li>
@@ -29,6 +31,16 @@
                     <li><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </nav>
+            <div class="home-box">
+                <h1>I'm Katarzyna Stepczyńska.</h1>
+                <h1>Hello! Nice to meet <span>you.</span></h1>
+            </div>
+            <div class="social">
+                <a href="https://github.com/katarzyna-stepczynska" target="blank"><i class="fab fa-github social-icon"></i></a>
+                <a href="https://www.linkedin.com/in/katarzynastepczynska/" target="blank"><i
+                        class="fab fa-linkedin-in social-icon"></i></a>
+                <a href="https://www.behance.net/katarzynastepczynska"><i class="fab fa-behance social-icon"></i></a>
+            </div>
         </header>
         <section id="home">
             <div class="container">
@@ -216,10 +228,45 @@
                 </div>
             </div>
         </footer>
+        <div id="preloader" class="preloader preloader-hidden">
+            <span class="loading"></span>
+        </div>
         <script>
-            function toggleMenu(e) {
-                e.classList.toggle("open");
-            }
+            const hamburger = document.getElementById("menu-mobile");
+            const menu = document.getElementById("menu");
+            const menuToggle = () => {
+                    hamburger.classList.toggle("open");
+                    menu.classList.toggle("menu-view");
+                    console.log('you click me');
+                };
+
+            hamburger.addEventListener("click", menuToggle);
+            
+
+            const navigation = document.querySelectorAll('.nav-bar .nav-link')
+
+                for (let item of navigation) {
+                    item.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const sectionHash = item.getAttribute('href');
+                        const section = document.querySelector(sectionHash);
+                        section.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        })
+                    })
+                }
+
+                document.querySelector("#preloader").classList.remove("preloader-hidden");
+                const preloader = document.querySelector("#preloader");
+                window.addEventListener("load", function () {
+                    preloader.classList.add("preloader-hiding");
+                    preloader.addEventListener("transitionend", function () {
+                        this.classList.remove("preloader-hiding");
+                        this.classList.add("preloader-hidden");
+                    })
+                });
+
         </script>
     </body>
 </html>
