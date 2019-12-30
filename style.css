@@ -33,12 +33,8 @@
 .header-logo {
     margin-bottom: 20px;
 }
-#logo-img {
-    display: none;
-    height: 30px;
-    margin: 0 15px;
-}
 .header-logo a {
+    display: none;
     font-family: var(--main-font);
     font-size: var(--mediumfont);
     float: left;
@@ -403,7 +399,13 @@ footer {
         align-items: center;
     }
     .header-logo a {
+        display: block;
         font-size: var(--bigfont);
+        font-family: var(--main-font);
+        float: left;
+        color: var(--onecolor);
+        margin: 20px 0 0 20px;
+        text-decoration: none;
     }
     .nav-icon {
         display: none;
